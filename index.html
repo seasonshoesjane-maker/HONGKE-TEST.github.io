@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HONGKE Throttle Valves | Advanced Engine Control Systems</title>
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        dark: '#1E293B',
+                        light: '#F8FAFC',
+                        accent: '#F59E0B'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .text-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .bg-gradient-blue {
+                background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+            }
+            .bg-gradient-green {
+                background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            }
+            .transition-all-300 {
+                transition: all 300ms ease-in-out;
+            }
+            .glass-effect {
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-light text-dark antialiased">
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <svg class="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold text-dark">HONGKE</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-dark hover:text-primary font-medium transition-all-300">Home</a>
+                    <a href="#products" class="text-dark hover:text-primary font-medium transition-all-300">Products</a>
+                    <a href="#technology" class="text-dark hover:text-primary font-medium transition-all-300">Technology</a>
+                    <a href="#about" class="text-dark hover:text-primary font-medium transition-all-300">About Us</a>
+                    <a href="#contact" class="text-dark hover:text-primary font-medium transition-all-300">Contact</a>
+                </nav>
+                
+                <!-- Language Selector -->
+                <div class="hidden md:flex items-center">
+                    <div class="relative">
+                        <button class="flex items-center text-dark hover:text-primary transition-all-300">
+                            <span class="mr-1">EN</span>
+                            <i class="fa fa-chevron-down text-xs"></i>
+                        </button>
+                    </div>
+                    <a href="#contact" class="ml-6 bg-primary hover:bg-blue-600 text-white px-5 py-2 rounded-full transition-all-300">
+                        Get Quote
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-dark hover:text-primary focus:outline-none">
+                        <i class="fa fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="text-dark hover:text-primary font-medium py-2 transition-all-300">Home</a>
+                    <a href="#products" class="text-dark hover:text-primary font-medium py-2 transition-all-300">Products</a>
+                    <a href="#technology" class="text-dark hover:text-primary font-medium py-2 transition-all-300">Technology</a>
+                    <a href="#about" class="text-dark hover:text-primary font-medium py-2 transition-all-300">About Us</a>
+                    <a href="#contact" class="text-dark hover:text-primary font-medium py-2 transition-all-300">Contact</a>
+                    <div class="pt-2 flex items-center">
+                        <span class="mr-2">Language:</span>
+                        <button class="flex items-center text-dark hover:text-primary transition-all-300">
+                            <span class="mr-1">English</span>
+                            <i class="fa fa-chevron-down text-xs"></i>
+                        </button>
+                    </div>
+                    <a href="#contact" class="mt-3 bg-primary hover:bg-blue-600 text-white px-5 py-2 rounded-full text-center transition-all-300">
+                        Get Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right" data-aos-duration="1000">
+                    <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight mb-6">
+                        HONGKE <span class="text-gradient bg-gradient-blue">Throttle Valves</span> for Optimal Engine Performance
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
+                        Advanced engine control systems for automotive manufacturers worldwide. Enhance efficiency, reduce emissions, and improve overall engine performance.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#products" class="bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded-full text-center transition-all-300 text-lg font-medium">
+                            Explore Products
+                        </a>
+                        <a href="#technology" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full text-center transition-all-300 text-lg font-medium">
+                            Learn More
+                        </a>
+                    </div>
+                    <div class="mt-12 flex items-center">
+                        <div class="flex -space-x-2">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Customer" class="w-10 h-10 rounded-full border-2 border-white">
+                        </div>
+                        <div class="ml-4">
+                            <div class="flex items-center">
+                                <div class="flex">
+                                    <i class="fa fa-star text-yellow-400"></i>
+                                    <i class="fa fa-star text-yellow-400"></i>
+                                    <i class="fa fa-star text-yellow-400"></i>
+                                    <i class="fa fa-star text-yellow-400"></i>
+                                    <i class="fa fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="ml-2 font-medium">5.0 (200+ reviews)</span>
+                            </div>
+                            <p class="text-sm text-gray-600">Trusted by leading automotive manufacturers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="relative z-10 animate-float">
+                        <img src="https://p3-doubao-search-sign.byteimg.com/labis/c5b2ab64a47355a583bc4e12c146bc73~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1783476377&x-signature=aeG3iKK9eDS6HU7jUpqo95LSzkI%3D" alt="Throttle Valve" class="w-full max-w-md mx-auto rounded-lg shadow-2xl">
+                        <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fa fa-check text-green-500 text-xl"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="font-semibold">Precision Engineered</h4>
+                                    <p class="text-sm text-gray-600">±0.01mm tolerance</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-100 rounded-full opacity-50 blur-3xl -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">Advanced Throttle Valve Technology</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Our electronic throttle valves are designed for optimal engine performance, fuel efficiency, and reduced emissions.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-light p-8 rounded-xl shadow-sm hover:shadow-md transition-all-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-tachometer text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Precise Airflow Control</h3>
+                    <p class="text-gray-600">
+                        Electronically controlled throttle valves provide precise air mass supply, ensuring optimal combustion and engine performance.
+                    </p>
+                </div>
+                
+                <div class="bg-light p-8 rounded-xl shadow-sm hover:shadow-md transition-all-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-leaf text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Reduced Emissions</h3>
+                    <p class="text-gray-600">
+                        Optimized air-fuel mixture leads to more complete combustion, significantly reducing harmful emissions and meeting strict environmental standards.
+                    </p>
+                </div>
+                
+                <div class="bg-light p-8 rounded-xl shadow-sm hover:shadow-md transition-all-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-bolt text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Enhanced Performance</h3>
+                    <p class="text-gray-600">
+                        Faster response times and intelligent control systems improve acceleration, drivability, and overall vehicle performance.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-4">Robust Design for Extreme Conditions</h3>
+                    <p class="text-gray-600 mb-6">
+                        Our throttle valves are built to withstand the harshest environments, from extreme temperatures to high vibration conditions.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Operating temperature range: -40°C to +180°C</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Maximum boost pressure: Up to 8 bar abs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Response time: Less than 40ms</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Corrosion resistant materials for long service life</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/457a61fef0b24aeaf7a3ffc2dee7a55a~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1783476377&x-signature=hnp1AHGBBc6Q0vkLr%2B4Jl2x7H%2FI%3D" alt="Throttle Valve Technical" class="w-full rounded-lg shadow-xl">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fa fa-cogs text-primary text-xl"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-semibold">Durable Construction</h4>
+                                <p class="text-sm text-gray-600">10+ year service life</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">Our Throttle Valve Products</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    A comprehensive range of electronic throttle valves for various engine sizes and applications.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden">
+                        <img src="https://p26-doubao-search-sign.byteimg.com/ecom-shop-material/WZoUTWPA_m_55cd644036299da53e970bee8199bf63_sx_32081_www800-800~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1783476377&x-signature=tLQ7cOVRQMWFdwF8G1lUStGrR18%3D" alt="DV-E 32mm Throttle Valve" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Compact
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">DV-E 32mm</h3>
+                        <p class="text-gray-600 mb-4">
+                            Compact throttle valve designed for small displacement engines and light commercial vehicles.
+                        </p>
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-600">Diameter:</span>
+                                <span class="font-medium">32mm</span>
+                            </div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-600">Max. Temperature:</span>
+                                <span class="font-medium">180°C</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Response Time:</span>
+                                <span class="font-medium">&lt;100ms</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex justify-between items-center">
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium flex items-center">
+                                View Details
+                                <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                            <button class="bg-gray-100 hover:bg-gray-200 text-dark p-2 rounded-full transition-all-300">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden">
+                        <img src="https://p26-doubao-search-sign.byteimg.com/ecom-shop-material/jpeg_m_09b1fe9fb201756c4af8b31ae6eb9657_sx_199306_www800-800~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1783476377&x-signature=scAtu8FBBXtoNCek9S13MRC6sn8%3D" alt="DV-E 48mm Throttle Valve" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Popular
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">DV-E 48mm</h3>
+                        <p class="text-gray-600 mb-4">
+                            Versatile throttle valve suitable for a wide range of passenger cars and medium-duty applications.
+                        </p>
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-600">Diameter:</span>
+                                <span class="font-medium">48mm</span>
+                            </div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-600">Max. Temperature:</span>
+                                <span class="font-medium">180°C</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Response Time:</span>
+                                <span class="font-medium">&lt;80ms</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex justify-between items-center">
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium flex items-center">
+                                View Details
+                                <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                            <button class="bg-gray-100 hover:bg-gray-200 text-dark p-2 rounded-full transition-all-300">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all-300 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://p3-doubao-search-sign.byteimg.com/labis/c5b2ab64a47355a583bc4e12c146bc73~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1783476377&x-signature=aeG3iKK9eDS6HU7jUpqo95LSzkI%3D" alt="DV-E 64mm Throttle Valve" class="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Heavy Duty
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">DV-E 64mm</h3>
+                        <p class="text-gray-600 mb-4">
+                            Heavy-duty throttle valve for larger engines and commercial vehicles requiring higher airflow.
+                        </p>
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-600">Diameter:</span>
+                                <span class="font-medium">64mm</span>
+                            </div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-600">Max. Temperature:</span>
+                                <span class="font-medium">180°C</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Response Time:</span>
+                                <span class="font-medium">&lt;100ms</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex justify-between items-center">
+                            <a href="#" class="text-primary hover:text-blue-700 font-medium flex items-center">
+                                View Details
+                                <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                            <button class="bg-gray-100 hover:bg-gray-200 text-dark p-2 rounded-full transition-all-300">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center" data-aos="fade-up">
+                <a href="#" class="inline-flex items-center justify-center px-8 py-3 border border-primary text-primary hover:bg-primary hover:text-white rounded-full transition-all-300 text-lg font-medium">
+                    View All Products
+                    <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">Advanced Throttle Valve Technology</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Discover how our electronic throttle valves work to optimize engine performance.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative" data-aos="fade-right">
+                    <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-xl">
+                        <div class="relative bg-gray-100 h-96 flex items-center justify-center">
+                            <img src="https://p3-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/903160411847917579~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1783476376&x-signature=d7UriqXcl4P9zyeooFSr8Utlq5Y%3D" alt="Engine with Throttle Valve" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <button class="w-20 h-20 bg-primary bg-opacity-80 hover:bg-opacity-100 rounded-full flex items-center justify-center transition-all-300">
+                                    <i class="fa fa-play text-white text-2xl"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fa fa-play-circle text-primary text-xl"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-semibold">How It Works</h4>
+                                <p class="text-sm text-gray-600">2:45 minute video</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-6">Electronic Throttle Control System</h3>
+                    <p class="text-gray-600 mb-8">
+                        Our electronic throttle valves work in conjunction with the engine control unit (ECU) to precisely regulate the airflow into the engine, ensuring optimal combustion under all operating conditions.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                                    <span class="font-bold">1</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium mb-1">Sensor Input</h4>
+                                <p class="text-gray-600">
+                                    The accelerator pedal position sensor sends signals to the ECU, indicating the driver's intent.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                                    <span class="font-bold">2</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium mb-1">ECU Processing</h4>
+                                <p class="text-gray-600">
+                                    The ECU processes input from multiple sensors and calculates the optimal throttle position.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                                    <span class="font-bold">3</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium mb-1">Throttle Actuation</h4>
+                                <p class="text-gray-600">
+                                    The electric motor adjusts the throttle valve position to achieve the desired airflow.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                                    <span class="font-bold">4</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium mb-1">Feedback Loop</h4>
+                                <p class="text-gray-600">
+                                    Position sensors provide real-time feedback to ensure precise control and immediate response.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="#" class="inline-flex items-center text-primary hover:text-blue-700 font-medium">
+                            Download Technical Whitepaper
+                            <i class="fa fa-download ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-light p-8 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-microchip text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Integrated Electronics</h3>
+                    <p class="text-gray-600">
+                        Our throttle valves feature integrated electronic control units with advanced microprocessors for precise operation and diagnostics.
+                    </p>
+                </div>
+                
+                <div class="bg-light p-8 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-cogs text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">High-Performance Actuators</h3>
+                    <p class="text-gray-600">
+                        Brushless DC motors provide rapid response times and precise positioning, ensuring optimal engine performance in all conditions.
+                    </p>
+                </div>
+                
+                <div class="bg-light p-8 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-shield text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Redundant Safety Systems</h3>
+                    <p class="text-gray-600">
+                        Multiple safety features including limp-home functionality ensure vehicle operability even in the event of system failures.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">Applications & Industries</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Our throttle valves are used in a wide range of applications across multiple industries.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-car text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Passenger Vehicles</h3>
+                    <p class="text-gray-600">
+                        Optimized throttle response and fuel efficiency for modern passenger cars.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-truck text-secondary text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Commercial Vehicles</h3>
+                    <p class="text-gray-600">
+                        Durable throttle solutions for trucks, buses, and other heavy-duty vehicles.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-industry text-accent text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Industrial Equipment</h3>
+                    <p class="text-gray-600">
+                        Reliable throttle control for generators, pumps, and other industrial machinery.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-leaf text-purple-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Alternative Fuels</h3>
+                    <p class="text-gray-600">
+                        Specialized solutions for natural gas, propane, and other alternative fuel systems.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-white rounded-2xl overflow-hidden shadow-lg" data-aos="fade-up">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="p-8 md:p-12">
+                        <h3 class="text-2xl font-bold mb-4">Custom Solutions for Your Specific Needs</h3>
+                        <p class="text-gray-600 mb-6">
+                            We work closely with our clients to develop customized throttle valve solutions that meet their specific requirements and applications.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                <span>Custom sizing and specifications</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                <span>Special materials for extreme environments</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                <span>Integration with existing engine management systems</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                <span>Prototype development and testing</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="inline-flex items-center bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-full transition-all-300">
+                            Request Custom Solution
+                            <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                    <div class="bg-gray-100 flex items-center justify-center p-8">
+                        <img src="https://p26-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/991431318556508167~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1783476376&x-signature=G1%2BweT6aLey5cBLfJMNY17AaHI0%3D" alt="Custom Throttle Valve Solution" class="max-w-full rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">About HONGKE</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    HONGKE - Professional manufacturer of high-performance electronic throttle valves for the global automotive industry.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-6">Our History & Expertise</h3>
+                    <p class="text-gray-600 mb-6">
+                        Founded in 2005, HONGKE has established itself as a trusted partner to leading automotive manufacturers worldwide. With over 15 years of experience in engine control systems, we have developed advanced throttle valve technologies that deliver superior performance, reliability, and efficiency.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Our team of engineers and technicians combines extensive industry knowledge with cutting-edge research and development capabilities to create innovative solutions that meet the evolving needs of the automotive industry.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div>
+                            <h4 class="text-4xl font-bold text-primary mb-2">15+</h4>
+                            <p class="text-gray-600">Years of Industry Experience</p>
+                        </div>
+                        <div>
+                            <h4 class="text-4xl font-bold text-primary mb-2">100+</h4>
+                            <p class="text-gray-600">Global Employees</p>
+                        </div>
+                        <div>
+                            <h4 class="text-4xl font-bold text-primary mb-2">50+</h4>
+                            <p class="text-gray-600">Patents Awarded</p>
+                        </div>
+                        <div>
+                            <h4 class="text-4xl font-bold text-primary mb-2">30+</h4>
+                            <p class="text-gray-600">Countries Served</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <img src="https://p11-doubao-search-sign.byteimg.com/labis/4ebd54aeadc80af64bf01964430980a6~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1783476376&x-signature=hdf%2FFzzmEycn2bvRVKUKwzBC9Ts%3D" alt="HONGKE Factory" class="w-full rounded-lg shadow-xl">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fa fa-industry text-primary text-xl"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-semibold">Advanced Manufacturing</h4>
+                                <p class="text-sm text-gray-600">ISO 9001 Certified</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 rounded-2xl p-8 md:p-12" data-aos="fade-up">
+                <div class="text-center mb-10">
+                    <h3 class="text-2xl font-bold mb-4">Our Commitment to Quality</h3>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        We adhere to the highest standards of quality and reliability in everything we do.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fa fa-certificate text-primary text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">ISO 9001 Certified</h4>
+                        <p class="text-gray-600">
+                            Our quality management system is certified to ISO 9001 standards, ensuring consistent product quality and reliability.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fa fa-flask text-secondary text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Rigorous Testing</h4>
+                        <p class="text-gray-600">
+                            All our products undergo extensive testing under various conditions to ensure optimal performance and durability.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fa fa-recycle text-accent text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Environmental Responsibility</h4>
+                        <p class="text-gray-600">
+                            We are committed to sustainable manufacturing practices and developing products that reduce environmental impact.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">What Our Clients Say</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Hear from some of the leading automotive manufacturers who trust our throttle valve solutions.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex mb-6">
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "HONGKE's electronic throttle valves have significantly improved the performance and fuel efficiency of our vehicle fleet. Their technical support team has been exceptional throughout our partnership."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-12 h-12 rounded-full">
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Michael Johnson</h4>
+                            <p class="text-sm text-gray-600">Technical Director, AutoMotors Inc.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex mb-6">
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "The reliability and precision of HONGKE's throttle valves have helped us meet stringent emissions standards while maintaining optimal engine performance. Their custom solutions have been a game-changer for our specialized applications."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="w-12 h-12 rounded-full">
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Sarah Martinez</h4>
+                            <p class="text-sm text-gray-600">Engineering Manager, Global Trucks Ltd.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex mb-6">
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                        <i class="fa fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "We've been working with HONGKE for over five years, and their products consistently exceed our expectations. Their commitment to innovation and quality makes them an invaluable partner in our success."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Client" class="w-12 h-12 rounded-full">
+                        <div class="ml-4">
+                            <h4 class="font-semibold">David Chen</h4>
+                            <p class="text-sm text-gray-600">VP of Manufacturing, PowerTech Industries</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center" data-aos="fade-up">
+                <div class="grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Volkswagen_logo_2019.svg/1200px-Volkswagen_logo_2019.svg.png" alt="Volkswagen" class="h-8 object-contain">
+                </div>
+                <div class="grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/GM_Logo.svg/1200px-GM_Logo.svg.png" alt="General Motors" class="h-8 object-contain">
+                </div>
+                <div class="grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Ford_Motor_Company_Logo.svg/1200px-Ford_Motor_Company_Logo.svg.png" alt="Ford" class="h-8 object-contain">
+                </div>
+                <div class="grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Toyota.svg/1200px-Toyota.svg.png" alt="Toyota" class="h-8 object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">Contact Us</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Ready to enhance your engine performance with our precision throttle valves? Get in touch with our team today.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all-300">
+                            </div>
+                            <div>
+                                <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+                                <input type="text" id="company" name="company" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all-300">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all-300">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all-300">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="product" class="block text-sm font-medium text-gray-700 mb-1">Interested Product</label>
+                            <select id="product" name="product" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all-300">
+                                <option value="">Select a product</option>
+                                <option value="dv-e-32mm">DV-E 32mm</option>
+                                <option value="dv-e-48mm">DV-E 48mm</option>
+                                <option value="dv-e-64mm">DV-E 64mm</option>
+                                <option value="custom">Custom Solution</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all-300"></textarea>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="w-full bg-primary hover:bg-blue-600 text-white py-3 rounded-lg transition-all-300 font-medium text-lg">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="bg-gray-50 p-8 rounded-xl h-full">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fa fa-map-marker text-primary text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold mb-1">Headquarters</h4>
+                                    <p class="text-gray-600">
+                                        123 Innovation Drive<br>
+                                        Automotive Park<br>
+                                        Detroit, MI 48201<br>
+                                        United States
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fa fa-envelope text-primary text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold mb-1">Email Us</h4>
+                                    <p class="text-gray-600">
+                                        Sales: <a href="mailto:sales@hongke.com" class="text-primary hover:underline">sales@hongke.com</a><br>
+                                        Support: <a href="mailto:support@hongke.com" class="text-primary hover:underline">support@hongke.com</a><br>
+                                        General: <a href="mailto:info@hongke.com" class="text-primary hover:underline">info@hongke.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fa fa-phone text-primary text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold mb-1">Call Us</h4>
+                                    <p class="text-gray-600">
+                                        Sales: +1 (800) 123-4567<br>
+                                        Technical Support: +1 (800) 123-4568<br>
+                                        Customer Service: +1 (800) 123-4569
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fa fa-clock-o text-primary text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold mb-1">Business Hours</h4>
+                                    <p class="text-gray-600">
+                                        Monday - Friday: 9:00 AM - 6:00 PM EST<br>
+                                        Saturday - Sunday: Closed<br>
+                                        Holidays: Please contact us for holiday hours
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-semibold mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 bg-blue-100 hover:bg-primary hover:text-white rounded-full flex items-center justify-center transition-all-300">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-blue-100 hover:bg-primary hover:text-white rounded-full flex items-center justify-center transition-all-300">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-blue-100 hover:bg-primary hover:text-white rounded-full flex items-center justify-center transition-all-300">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-blue-100 hover:bg-primary hover:text-white rounded-full flex items-center justify-center transition-all-300">
+                                    <i class="fa fa-youtube-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <svg class="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold">HONGKE</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Advanced engine control systems for optimal performance, efficiency, and emissions reduction.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-all-300">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-all-300">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-all-300">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-all-300">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-primary transition-all-300">Home</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-primary transition-all-300">Products</a></li>
+                        <li><a href="#technology" class="text-gray-400 hover:text-primary transition-all-300">Technology</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-primary transition-all-300">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-primary transition-all-300">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-all-300">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Products</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-all-300">DV-E 32mm</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-all-300">DV-E 48mm</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-all-300">DV-E 64mm</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-all-300">Custom Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-all-300">Replacement Parts</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-all-300">Accessories</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact Us</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-400">123 Innovation Drive, Detroit, MI 48201</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-envelope text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-400">info@hongke.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-phone text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-400">+1 (800) 123-4567</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <h5 class="font-medium mb-3">Newsletter</h5>
+                        <form class="flex">
+                            <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none flex-1">
+                            <button type="submit" class="bg-primary hover:bg-blue-600 px-4 py-2 rounded-r-lg transition-all-300">
+                                <i class="fa fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        &copy; 2025 HONGKE. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-all-300">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-all-300">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-all-300">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all-300 opacity-0 invisible">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize AOS Animation Library
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-white', 'shadow-md');
+                } else {
+                    navbar.classList.remove('bg-white', 'shadow-md');
+                }
+            });
+            
+            // Back to Top Button
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Smooth Scrolling for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Close mobile menu if open
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                        
+                        // Scroll to target
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Product Quick View
+            const productQuickViewButtons = document.querySelectorAll('.product-quick-view');
+            productQuickViewButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = this.getAttribute('data-product-id');
+                    alert(`Quick view for product ${productId}`);
+                    // Here you would typically open a modal with product details
+                });
+            });
+            
+            // Contact Form Submission
+            const contactForm = document.querySelector('#contact form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(contactForm);
+                    const formDataObj = {};
+                    formData.forEach((value, key) => {
+                        formDataObj[key] = value;
+                    });
+                    
+                    // Validate form
+                    let isValid = true;
+                    const requiredFields = ['name', 'email', 'message'];
+                    requiredFields.forEach(field => {
+                        if (!formDataObj[field]) {
+                            isValid = false;
+                            document.getElementById(field).classList.add('border-red-500');
+                        } else {
+                            document.getElementById(field).classList.remove('border-red-500');
+                        }
+                    });
+                    
+                    if (isValid) {
+                        // Here you would typically send the form data to your server
+                        alert('Thank you for your message! We will get back to you soon.');
+                        contactForm.reset();
+                    } else {
+                        alert('Please fill in all required fields.');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
